@@ -10,6 +10,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 
 @Data
 @NoArgsConstructor
@@ -26,8 +28,16 @@ public class Device {
     @OneToOne(mappedBy = "device")
     private Telemetry telemetry;
 
-//    @Column(name = "TYPE")
-//    @Enumerated(EnumType.STRING)
-//    private DeviceType type;
+    @Column(name= "createdDate")
+    private LocalDateTime createdDate;
+
+    @Column
+    private String os;
+
+    @Column
+    private String macAddress;
+
+    @Column(name = "TYPE")
+    private DeviceType type;
 
 }
